@@ -64,13 +64,13 @@ function initMap() {
 // if the map cannot be displayed, shows the error code types
 function onError(error) {
     switch (error.code) {
-        case PERMISSION_DENIED:
+        case 0:
             alert('User denied permission');
             break;
-        case TIMEOUT:
+        case 1:
             alert('Geolocation timed out');
             break;
-        case POSITION_UNAVAILABLE:
+        case 3:
             alert('Geolocation information is not available');
             break;
         default:
@@ -78,6 +78,7 @@ function onError(error) {
             break;
     }
 }
+
 //draw the map if Geolocation is supported by the browser
 function onSuccess(position) {
     currentPosition = {
