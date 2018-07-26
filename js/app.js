@@ -38,6 +38,32 @@ let currentPosition = {
 
 // init the map 
 function initMap() {
+    let currentPosition = {
+        lat: 0,
+        lng: 0,
+    };
+
+    const mapOptions = {
+        center: currentPosition,
+        zoom: 15,
+        streetViewControl: false,
+        styles: [{
+            stylers: [
+                { hue: "#00ff6f" },
+                { saturation: -50 }
+            ]
+        }]
+    }
+    const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+    const infoWindow = new google.maps.InfoWindow({
+        content: document.getElementById('information')
+    });
+    const newWindow = new google.maps.InfoWindow({
+        content: document.getElementById('information-new-restaurant')
+    });
+
+
     // JS Geolocation method, to find user current location
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -46,26 +72,6 @@ function initMap() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude,
             };
-
-            mapOptions = {
-                center: currentPosition,
-                zoom: 15,
-                streetViewControl: false,
-                styles: [{
-                    stylers: [
-                        { hue: "#00ff6f" },
-                        { saturation: -50 }
-                    ]
-                }]
-            }
-            map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-            infoWindow = new google.maps.InfoWindow({
-                content: document.getElementById('information')
-            });
-            newWindow = new google.maps.InfoWindow({
-                content: document.getElementById('information-new-restaurant')
-            });
 
             infoWindow.setPosition(currentPosition);
             map.setCenter(currentPosition);
