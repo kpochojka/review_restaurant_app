@@ -29,11 +29,6 @@ form.hide();
 reviewSubmitBtn.hide();
 let emptyRate = '&#9675;';
 let fullRate = '&#9679;';
-let currentPosition = {
-    lat: 40.6976701,
-    lng: -74.2598824
-};
-
 
 
 // init the map 
