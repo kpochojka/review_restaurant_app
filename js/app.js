@@ -1,4 +1,3 @@
-let map, mapOptions, infoWindow, smallWindow, newWindow;
 //sort-by variables:
 let one = false;
 let two = false;
@@ -7,6 +6,7 @@ let five = false;
 let three = false;
 let four = false;
 /*---------------------*/
+let smallWindow;
 let isRestaurantNew = true;
 let restaurantIndex = -1;
 let newReviewArray = new Array;
@@ -17,14 +17,14 @@ let newRestaurants = new Array;
 let restaurantsArray = new Array;
 //restaurants from google maps API
 let googleRestaurantsArray = new Array;
-let restaurantInfoDiv = $('#restaurant-info');
-let sortOptionsDiv = $('#sort-options');
+const restaurantInfoDiv = $('#restaurant-info');
+const sortOptionsDiv = $('#sort-options');
 sortOptionsDiv.hide();
 restaurantInfoDiv.hide();
-let sortBy = $('#sort');
-let form = $('#add-restaurant');
-let reviewSubmitBtn = $('#review-submit');
-let reviewDiv = $('#review-window');
+const sortBy = $('#sort');
+const form = $('#add-restaurant');
+const reviewSubmitBtn = $('#review-submit');
+const reviewDiv = $('#review-window');
 form.hide();
 reviewSubmitBtn.hide();
 let emptyRate = '&#9675;';
